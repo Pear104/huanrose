@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận tiền free</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="toast">
+    </div>
+    
+    <div class="btn-container">
+        <button onclick="showNotice()" class="btn">Bấm vào đây để nhận 500,000 VND</button>
+    </div>
+
+    <script>
+        function showNotice() {
+            const main = document.getElementById('toast')
+            if (main) {
+                const autoRemove = setTimeout(function() {
+                    main.removeChild(toast)
+                }, 3000)
+                
+                const toast = document.createElement('div')
+                toast.classList.add('toast');
+                toast.innerHTML = `
+                <div class="toast__icon"><i class="fa-solid fa-poo"></i></div>
+                <div class="toast__body">
+                    <div class="toast__title">Ơ kìa?</div>
+                    <div class="toast__msg">Học bài của thầy Huấn chưa?</div>
+                </div>
+                <img class="toast__img" src="https://lucloi.vn/wp-content/uploads/2020/03/90113199_1484759231678998_1738875423124619264_n.jpg"></img>
+                <div class="toast__close"><i class="fa-solid fa-xmark"></i></div>
+                `
+                main.appendChild(toast)
+
+                toast.onclick = function(ev) {
+                    if (ev.target.closest('.toast__close')) {
+                        main.removeChild(toast)
+                        clearTimeout(autoRemove)
+                    }
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

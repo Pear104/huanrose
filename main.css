@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+}
+
+#toast {
+    position: fixed;
+    top: 3px;
+    right: 16px;
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #fff;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    margin-top: 16px;
+    animation: slideInLeft 0.5s ease, fadeOut 0.5s 2s linear forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(calc(100% + 18px));
+    } to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast__icon, .toast__close {
+    padding: 32px 16px;
+    font-size: 20px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__title {
+    font-weight: 500;
+}
+
+.toast__msg {
+    line-height: 1.4;
+}
+
+.toast__close {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    height: 30px;
+    width: 350px;
+    background-color: greenyellow;
+    text-align: center;
+    border-radius: 40px;
+    margin: 16px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+.toast__img {
+    height: 140px;
+    /* width: 150px; */
+    padding: 8px 0;
+}
